@@ -9,4 +9,4 @@
   #create # создаст пустой файл после того, как старый будет ротирован
   postrotate/endscript # выполнит после ротации какой-нибудь скрипт
     date +"%d-%m-%y %T Frontend" >> /opt/student_rotate.log 
-} 
+}
