@@ -1,0 +1,2 @@
+0 * * * * sudo /etc/cron.daily/logrotate
+0 * * * * sudo -u user-backup rsync -azvh /home/jarservice/sausage-store.jar user-backup@158.160.26.88:/opt/backup/$(date +"%Y-%m-%d-%H")/
