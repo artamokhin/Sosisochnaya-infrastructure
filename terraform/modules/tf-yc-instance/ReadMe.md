@@ -15,8 +15,11 @@
 | ---- | ----------- | ---- | ------- | -------- |
 | zone | Instance availability zone | string | ru-central1-a | yes |
 | platform_id | Yandex Compute Cloud platform variant | string | standard-v1 | yes |
-| disk_size | YandexCloud instance bootable disk size | string | 30 | yes |
+| image_id | Yandex Cloud boot image ID | string | fd80qm01ah03dkqb14lc | yes |
+| disk_size | Yandex Cloud instance bootable disk size | string | 30 | yes |
 | preemptible | True for short-lived compute instances | boolean | false | yes |
+| subnet_id | Network subnet ID | string | e9bglr3c0r3cklccie5m | yes |
+| VM_name | Yandex Cloud Virtual Machine name | string | chapter5-lesson2-std-012-056 | yes |
 
 ## Выходные данные:
 

@@ -22,10 +22,10 @@ variable "zone" {
   nullable = false
 }
 
-variable "subnet_id" {
-  default     = "e9bglr3c0r3cklccie5m"
+variable "image_id" {
+  default     = "fd80qm01ah03dkqb14lc"
   type        = string
-  description = "Subnet ID"
+  description = "Boot image ID"
   sensitive = false
   nullable = false
 }

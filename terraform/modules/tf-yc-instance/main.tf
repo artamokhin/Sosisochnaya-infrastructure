@@ -1,5 +1,5 @@
 resource "yandex_compute_instance" "vm-1" {
-  name = "chapter5-lesson2-std-012-056"
+  name = var.VM_name
   zone = var.zone
   platform_id = var.platform_id
 
@@ -10,13 +10,13 @@ resource "yandex_compute_instance" "vm-1" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd80qm01ah03dkqb14lc"
+      image_id = var.image_id
       size = var.disk_size
     }
   }
 
   network_interface {
-    subnet_id = "e9bglr3c0r3cklccie5m"
+    subnet_id = var.subnet_id
     nat       = false
   }
 
