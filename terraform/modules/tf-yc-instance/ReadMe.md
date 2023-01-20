@@ -3,7 +3,7 @@
 ## Зависимости:
 
  - terraform 1.3.7
- - yandex cloud 1.101
+ - yandex cloud 0.84.0
  
  ## Провайдер
  
