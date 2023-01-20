@@ -6,6 +6,14 @@ variable "network_zones" {
   nullable = false
 }
 
+variable "zone" {
+  default     = "ru-central1-a"
+  type        = string
+  description = "Instance availability zone"
+  sensitive = true
+  nullable = false
+}
+
 variable "subnet_id" {
   default     = "e9bglr3c0r3cklccie5m"
   type        = string
