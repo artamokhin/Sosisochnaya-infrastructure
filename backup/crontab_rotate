@@ -1,0 +1,1 @@
+0 3 * * * ls -d -1tr /opt/backup/* | head -n -30 | sudo xargs -d '\n' rm -rf 
