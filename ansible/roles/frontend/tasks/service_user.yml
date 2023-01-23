@@ -1,0 +1,7 @@
+- name: Добавим сервисного пользователя
+  become: true
+  user:
+    name: "www-data"
+    create_home: yes
+    shell: /sbin/nologin
+
