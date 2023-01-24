@@ -1,0 +1,25 @@
+- name: "Добавление ключа от репозитория NodeJS"
+  become: true 
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: "Добавление репозитория для 16 версии NodeJS"
+  become: true
+  apt_repository:
+    repo: deb https://deb.nodesource.com/node_16.x focal main
+    update_cache: yes
+
+- name: "Установка NodeJS"
+  become: true 
+  apt:
+    update_cache: yes
+    name: nodejs
+    state: present
+
+- name: "Установка httpd"
+  become: true
+  npm:
+    name: http-server
+    path: /app/locatio
+    global: true

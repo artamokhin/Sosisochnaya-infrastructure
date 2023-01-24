@@ -1,0 +1,11 @@
+- name: Копируем описание службы
+  become: true
+  template:
+    src: /home/student/sausage-store-frontend.service
+    dest: /etc/systemd/system/sausage-store-frontend.service
+
+- name: Перечитываем конфигурацию systemd
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: sausage-store-frontend.service

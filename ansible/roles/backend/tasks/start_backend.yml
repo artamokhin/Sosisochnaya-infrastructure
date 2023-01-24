@@ -1,0 +1,6 @@
+- name: Запускаем службу!
+  become: true 
+  service:
+    name: sausage-store-backend
+    enabled: true
+    state: started

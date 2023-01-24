@@ -1,0 +1,7 @@
+---
+- name: Установка Java
+  become: yes
+  apt:
+    name: "openjdk-16-jdk"
+    state: present
+    update_cache: true

@@ -1,0 +1,8 @@
+---
+# tasks file for roles/frontend
+- include_tasks: install_npm_nodejs.yml
+- include_tasks: service_user.yml
+- include_tasks: create_folder.yml
+- include_tasks: download_nexus.yml
+- include_tasks: create_service.yml
+- include_tasks: start_frontend.yml
