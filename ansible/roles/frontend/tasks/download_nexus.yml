@@ -1,0 +1,20 @@
+- name: Скачиваем с Nexus архив с frontend
+  no_log: true
+  become: true
+  get_url:
+    dest: "/tmp"
+    owner: "www-data"
+    mode: 0755
+    url: "https://nexus.praktikum-services.ru/repository/sausage-store-Artamokhin-Aleksandr-frontend/sausage-store-front/sausage-store/{{  frontend_artefact_ver  }}/sausage-store-{{  frontend_artefact_ver  }}.tar.gz"
+    username: std-012-056
+    password: 4ay9U6W2
+
+- name: Распаковываем архив с frontend в целевую папку
+  become: true
+  unarchive:
+    src: /tmp/sausage-store-{{  frontend_artefact_ver  }}.tar.gz
+    dest: /var/www-data/dist
+    remote_src: yes
+
+# https://nexus.praktikum-services.ru/repository/sausage-store-Artamokhin-Aleksandr-frontend/sausage-store-front/sausage-store/1.0.361993/sausage-store-1.0.361993.tar.gz
+

@@ -1,0 +1,4 @@
+- name: Запускаем службу!
+  service:
+    name: sausage-store-frontend
+    state: started 

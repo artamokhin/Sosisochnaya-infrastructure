@@ -1,0 +1,14 @@
+---
+- name: Плей для запуска backend сервиса сосисочной
+  # Шаблон целевых хостов это группа хостов с именем backend
+  hosts: backend
+  # Список ansible-ролей для backend-серверов
+  roles:
+    - backend
+
+- name: Плей для запуска frontend сервиса сосисочной
+  # Шаблон целевых хостов это группа хостов с именем frontend
+  hosts: frontend
+  # Список ansible-ролей для frontend-серверов
+  roles:
+    - frontend 
