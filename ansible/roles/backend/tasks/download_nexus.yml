@@ -11,6 +11,5 @@
     group_id: "com.yandex.practicum.devops"
     artifact_id: "sausage-store"
     version: "1.0.351228"
-    username: std-012-056
-    password: 4ay9U6W2
-# https://nexus.praktikum-services.ru/repository/sausage-store-Artamokhin-Aleksandr-backend/sausage-store/com/yandex/practicum/devops/sausage-store/1.0.351228/sausage-store-1.0.351228.jar
+    username: "{{  nexus_username  }}"
+    password: "{{  nexus_password  }}"
