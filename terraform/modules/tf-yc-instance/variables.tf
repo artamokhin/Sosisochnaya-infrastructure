@@ -53,3 +53,11 @@ variable "VM_name" {
   sensitive = false
   nullable = false
 }
+
+variable "external_ip" {
+  default     = ""
+  type        = string
+  description = "External IP"
+  sensitive = false
+  nullable = true
+}

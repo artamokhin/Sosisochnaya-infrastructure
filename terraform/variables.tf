@@ -29,3 +29,20 @@ variable "image_id" {
   sensitive = false
   nullable = false
 }
+
+variable "subnet_id" {
+  default     = ""
+  type        = string
+  description = "Subnet_id"
+  sensitive = false
+  nullable = true
+}
+
+variable "external_ip_adress" {
+  default     = ""
+  type        = string
+  description = "External IP"
+  sensitive = false
+  nullable = true
+}
+
