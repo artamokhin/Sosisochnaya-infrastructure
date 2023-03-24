@@ -27,7 +27,6 @@ spec:
             - name: spring.cloud.vault.host
               value: 158.160.34.207
             - name: spring.cloud.vault.token
-#              value: ***REMOVED***
               valueFrom:
                 secretKeyRef:
                   name: vault
