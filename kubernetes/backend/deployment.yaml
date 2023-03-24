@@ -22,15 +22,18 @@ spec:
       containers:
         - name: backend
           image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/sausage-backend:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
-            - name: VAULT_HOST
+            - name: spring.cloud.vault.host
               value: 158.160.34.207
-            - name: VAULT_TOKEN
+            - name: spring.cloud.vault.token
+#              value: hvs.BmIcIRNkJEo3A3pVEX62Wrya
               valueFrom:
                 secretKeyRef:
                   name: vault
                   key: vault_token
+            - name: REPORT_PATH
+              value: ./logs
           ports:
             - name: backend
               containerPort: 8080
