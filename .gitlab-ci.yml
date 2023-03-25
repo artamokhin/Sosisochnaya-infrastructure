@@ -9,6 +9,7 @@ build-report:
   #     - kubernetes/*
   script:
     - cd kubernetes
+    - mkdir ~/.kube
     - touch ~/.kube/config
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
     - cat ~/.kube/config
