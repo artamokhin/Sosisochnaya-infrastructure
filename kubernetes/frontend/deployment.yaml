@@ -24,8 +24,6 @@ spec:
           image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/sausage-nginx:latest
           imagePullPolicy: Always
           volumeMounts:
-            - name: docker-socket
-              mountPath: /tmp/docker.sock
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
@@ -36,9 +34,6 @@ spec:
       imagePullSecrets:
         - name: docker-config-secret
       volumes:
-        - name: docker-socket
-          hostPath:
-            path: /var/run/docker.sock
         - name: nginx-conf
           configMap:
             name: nginx-conf
