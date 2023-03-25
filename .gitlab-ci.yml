@@ -15,6 +15,9 @@ build:
     - kubectl apply -f backend-report
     - kubectl apply -f frontend
     - rm ~/.kube/config
+  environment:
+    name: sausage-k8s
+    url: https://artamokhin-aleksandr-12.k8s.praktikum-services.tech/
 
 
 
