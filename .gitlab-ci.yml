@@ -1,12 +1,12 @@
 stages:
   - build
 
-build-report:
+build:
   stage: build
   image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/alpine/k8s:1.24.12
   only:
     changes:
-      - kubernetes/**
+      - kubernetes/*/*
   script:
     - cd kubernetes
     - mkdir ~/.kube
