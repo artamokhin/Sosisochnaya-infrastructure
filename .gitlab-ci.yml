@@ -10,7 +10,7 @@ build-report:
   script:
     - cd kubernetes
     - mkdir ~/.kube
-    - touch ~/.kube/config
+    # - touch ~/.kube/config
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
     - cat ~/.kube/config
     - kubectl apply -f backend
