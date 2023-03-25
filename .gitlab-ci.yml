@@ -1,0 +1,23 @@
+stages:
+  - build
+
+build-report:
+  stage: build
+  image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/alpine/k8s:1.24.12
+  only:
+    changes:
+      - kubernetes/*
+  script:
+    - cd kubernetes
+    - echo ${kubeconfig} | base64 -d > ~/.kube/config
+    - cat ~/.kube/config
+    - kubectl apply -f backend
+    - kubectl apply -f backend-report
+    - kubectl apply -f frontend
+    - rm ~/.kube/config
+
+
+
+
+
+
