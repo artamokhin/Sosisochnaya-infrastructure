@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: frontend
 spec:
-  # В кластере может быть несколько Ingress Controllers, мы используем NGINX
+  # В кластере может быть несколько Ingress Controllers, мы используем NGINX.
   ingressClassName: "nginx"
   tls:
     - hosts:
