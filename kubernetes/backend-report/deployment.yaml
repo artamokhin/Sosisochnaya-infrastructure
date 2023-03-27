@@ -40,14 +40,6 @@ spec:
           ports:
             - name: backend-report
               containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 10
-            timeoutSeconds: 3
-            failureThreshold: 2
       imagePullSecrets:
         - name: docker-config-secret
 
@@ -66,7 +58,7 @@ spec:
     kind: Deployment
     name: backend-report
   metrics:
-    — type: Resource
+    - type: Resource
       resource:
         name: cpu
         target:
