@@ -7,10 +7,14 @@ metadata:
     app: backend
 spec:
   replicas: 1
+  revisionHistoryLimit: 15
   # Стратегия развёртывания. Recreate — удалит сначала все старые Pod'ы
   # Есть и более гибкая стратегии, например, RollingUpdate, которая будет обновлять Pod'ы порциями
   strategy:
-    type: Recreate
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 20%
   selector:
     matchLabels:
       app: backend
@@ -23,6 +27,13 @@ spec:
         - name: backend
           image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/sausage-backend:latest
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "125Mi"
+              cpu: 0.1
+            limits:
+              memory: "250Mi"
+              cpu: 0.2
           env:
             - name: spring.cloud.vault.host
               value: 158.160.34.207
@@ -46,3 +57,26 @@ spec:
             failureThreshold: 6
       imagePullSecrets:
         - name: docker-config-secret
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: backend
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: backend
+  updatePolicy:
+    updateMode: "Auto"
+  resourcePolicy:
+    containerPolicies:
+      - containerName: "*"
+        minAllowed:
+          cpu: 0m
+          memory: 0Mi
+        maxAllowed:
+          cpu: 1
+          memory: 500Mi
+        controlledResources: ["cpu", "memory"]
+        controlledValues: RequestsAndLimits
