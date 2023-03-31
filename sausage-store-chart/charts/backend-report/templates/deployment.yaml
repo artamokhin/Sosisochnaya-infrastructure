@@ -2,11 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sausage-{{ .Release.Name }}
+  name: sausage-backend-report
   namespace: {{ .Release.Namespace }}
-  annotations:
-    meta.helm.sh/release-name: sausage
-    meta.helm.sh/release-namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: sausage-backend-report
     app.kubernetes.io/instance: "{{ .Release.Name }}"
