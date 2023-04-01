@@ -1,23 +1,24 @@
 stages:
-  - build
+  - deploy
 
-build:
-  stage: build
+deploy:
+  stage: deploy
   image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/alpine/k8s:1.24.12
   only:
     changes:
-      - kubernetes/*/*
+      - sausage-store-chart/**/*
   script:
-    - cd kubernetes
+    - cd sausage-store-chart
     - mkdir ~/.kube
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
-    - kubectl apply -f backend
-    - kubectl apply -f backend-report
-    - kubectl apply -f frontend
+    - helm repo add nexus $NEXUS_HELM_REPO
+    - helm repo update
+    - helm upgrade --install sausage-store \
+      --set environment=test \
+      --atomic --timeout 15m \
+      nexus/sausage-store
     - rm ~/.kube/config
-  environment:
-    name: sausage-k8s
-    url: https://artamokhin-aleksandr-12.k8s.praktikum-services.tech/
+
 
 
 
