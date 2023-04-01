@@ -13,10 +13,9 @@ deploy:
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
     - helm repo add nexus $NEXUS_HELM_REPO --username $NEXUS_REPO_USER --password $NEXUS_REPO_PASS
     - helm repo update
-    - helm upgrade --install sausage-store \
+    - helm upgrade --install sausage-store nexus/sausage-store \
       --set environment=test \
       --atomic --timeout 15m \
-      nexus/sausage-store
     - rm ~/.kube/config
 
 
