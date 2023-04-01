@@ -11,7 +11,7 @@ deploy:
     - cd sausage-store-chart
     - mkdir ~/.kube
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
-    - helm repo add nexus $NEXUS_HELM_REPO
+    - helm repo add nexus $NEXUS_HELM_REPO --username $NEXUS_REPO_USER --password $NEXUS_REPO_PASS
     - helm repo update
     - helm upgrade --install sausage-store \
       --set environment=test \
