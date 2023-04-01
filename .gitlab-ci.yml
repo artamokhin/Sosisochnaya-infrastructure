@@ -15,7 +15,7 @@ deploy:
     - curl -u std-012-056:4ay9U6W2 https://nexus.k8s.praktikum-services.tech/repository/sausage-store-helm-artamokhin-aleksandr-12/ --upload-file sausage-store-1.0.${CI_PIPELINE_ID}.tgz
     - helm repo add nexus $NEXUS_HELM_REPO --username $NEXUS_REPO_USER --password $NEXUS_REPO_PASS
     - helm repo update
-    - helm upgrade --install sausage-store nexus/sausage-store
+    - helm upgrade --install --set environment=test --atomic --timeout 15m sausage-store nexus/sausage-store
     - rm ~/.kube/config
 
 
