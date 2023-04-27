@@ -61,7 +61,6 @@ spec:
             failureThreshold: 6
       imagePullSecrets:
         - name: docker-config-secret
-
 ---
 apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
