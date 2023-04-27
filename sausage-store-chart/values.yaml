@@ -3,7 +3,7 @@ backend: # Это имя чарта из dependencies
   # Вместо latest правильнее использовать версию .Chart.AppVersion в шаблоне
   image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/sausage-backend
   tag: latest
-  replicas: 3
+  replicas: 1
   resources:
     requests:
       memory: "125Mi"
