@@ -40,3 +40,17 @@ frontend:
       memory: "250Mi"
       cpu: 0.2
   environment: production
+
+yandex_cloud_services:
+  # Пример значений для сервиса Managed PostgreSQL
+  - service: managed-postgresql
+    serviceId: c9qlet4gbg81d79211dr
+    folderId: b1g6kb8sqccdk2sg5drr
+    bearer_token: aje8084amokekkq7cbfh
+    scrape_interval: 60s
+  # Пример значений для сервиса Managed MongoDB
+  - service: managed-mongodb
+    serviceId: cakvctgrte4hunhvs8f
+    folderId: b1g2hqnugteh52j2dfr
+    bearer_token: AQVN3veeVseTVUm4RFjy-WRt9INXbdkS6Q8iC3Bh
+    scrape_interval: 60s
