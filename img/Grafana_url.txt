@@ -1,0 +1,1 @@
+https://std-012-056-grafana.k8s.praktikum-services.tech/
