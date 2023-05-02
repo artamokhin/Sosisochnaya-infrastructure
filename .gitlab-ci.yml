@@ -3,10 +3,10 @@ stages:
 
 deploy:
   stage: deploy
-  image: gitlab.praktikum-services.ru:5050/std-012-056/sausage-store/alpine/k8s:1.24.12
-  only:
-    changes:
- #     - sausage-store-chart/**/*
+  image: alpine/k8s:1.24.12
+#  only:
+#    changes:
+#      - sausage-store-chart/**/*
   script:
     - mkdir ~/.kube
     - echo ${kubeconfig} | base64 -d > ~/.kube/config
