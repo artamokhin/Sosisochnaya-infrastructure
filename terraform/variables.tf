@@ -7,7 +7,7 @@ variable "cloud_id" {
 } 
 
 variable "folder_id" {
-  default     = "***REMOVED***"
+  default     = "b1g6kb8sqccdk2sg5drr"
   type        = string
   description = "YandexCloud folder ID"
   sensitive = true

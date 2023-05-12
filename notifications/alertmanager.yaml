@@ -25,7 +25,7 @@ data:
       - name: "telegram"
         telegram_configs:
           - send_resolved: true
-            bot_token: ***REMOVED***
+            bot_token: 5933756043:AAE8JLL5KIzgrNBeTP5e-1bkbJy4YRoeGjs
             chat_id: -1001839618964
             parse_mode: ''
             message: "{{ "{{" }} range .Alerts {{ "}}" }}{{ "{{" }} .Annotations.summary {{ "}}" }}\n{{ "{{" }} .Annotations.description }}\n{{ "{{" }} end {{ "}}" }}"

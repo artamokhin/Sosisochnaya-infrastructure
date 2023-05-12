@@ -1,2 +1,2 @@
 id канала: -1001839618964
-bot_token = ***REMOVED***
+bot_token = 5933756043:AAE8JLL5KIzgrNBeTP5e-1bkbJy4YRoeGjs
