@@ -1,0 +1,17 @@
+- name: Создание директории для frontend
+  become: true
+  file:
+    path: /var/www-data/dist
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0775
+
+- name: Создание директории для логов
+  become: true
+  file:
+    path: /logs
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0775
